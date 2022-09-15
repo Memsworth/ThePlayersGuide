@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWorld", "HelloWorld\He
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Comments", "Comments\Comments.csproj", "{F2D2EA3A-9CA3-494C-AF10-61AB3694E0A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math", "Math\Math.csproj", "{59FDBD64-A55E-4535-8D57-CED180E7A827}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F2D2EA3A-9CA3-494C-AF10-61AB3694E0A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2D2EA3A-9CA3-494C-AF10-61AB3694E0A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2D2EA3A-9CA3-494C-AF10-61AB3694E0A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59FDBD64-A55E-4535-8D57-CED180E7A827}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59FDBD64-A55E-4535-8D57-CED180E7A827}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59FDBD64-A55E-4535-8D57-CED180E7A827}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59FDBD64-A55E-4535-8D57-CED180E7A827}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
