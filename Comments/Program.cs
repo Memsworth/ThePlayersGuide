@@ -1,10 +1,10 @@
-﻿namespace HelloWorld
+﻿namespace Comments
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            ConsolasAndTelim.RunProgram();
+            TheThingNamer.RunProgram();
         }
     }
 }
