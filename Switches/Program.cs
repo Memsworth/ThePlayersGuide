@@ -1,10 +1,10 @@
-﻿namespace Math
+﻿namespace Switches
 {
     internal class Program
     {
         static void Main(string[] args)
-        {
-            DominionKings.RunProgram();
+        {   
+            DiscountedInventory.RunProgram();
         }
     }
 }

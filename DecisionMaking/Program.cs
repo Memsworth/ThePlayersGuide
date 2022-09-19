@@ -1,10 +1,10 @@
-﻿namespace Math
+﻿namespace DecisionMaking
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            DominionKings.RunProgram();
+            WatchTower.RunProgram();
         }
     }
 }
