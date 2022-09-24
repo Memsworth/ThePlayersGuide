@@ -1,10 +1,10 @@
-﻿namespace InformationHiding
+﻿namespace Statics
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            PropertiesArrows.RunProgram();
+            ArrowFactories.RunProgram();
         }
     }
 }

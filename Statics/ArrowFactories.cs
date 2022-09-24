@@ -1,10 +1,18 @@
-﻿namespace InformationHiding;
+﻿namespace Statics;
 
-public static class VinTrouble
+public static class ArrowFactories
 {
     public static void RunProgram()
     {
-        var myArrow = new Arrow();
+
+        Console.WriteLine("What type of arrow? 1= elite 2=beginner 3= marksman 4= custom");
+        Arrow myArrow = int.Parse(Console.ReadLine() ?? throw new ArgumentNullException()) switch
+        {
+            1 => Arrow.CreateEliteArrow(),
+            2 => Arrow.CreateBeginnerArrow(),
+            3 => Arrow.CreateMarksmanArrow(),
+            4 => GetCustomArrow()
+        };
         Console.WriteLine($"The arrow costs {myArrow.GetCost():N} gold");
     }
 
@@ -27,7 +35,6 @@ public static class VinTrouble
         return arrowHead;
     }
 
-
     public static Fletching GetFletchingFromUser()
     {
         Console.WriteLine("Plastic, TurkeyFeathers, GooseFeathers");
@@ -44,6 +51,9 @@ public static class VinTrouble
 
         return fletching;
     }
+
+    private static Arrow GetCustomArrow() =>
+        new Arrow(GetArrowHeadFromUser(), GetFletchingFromUser(), GetShaftLength());
     private static float AskForNumberInRange(string text, float min, float max)
     {
         float number = 0;
@@ -74,11 +84,11 @@ public class Arrow
     private Fletching _Fletching { get; }
     private float _ShaftLength { get; }
 
-    public Arrow()
+    public Arrow(ArrowHead arrowHead, Fletching fletching, float shaftLength)
     {
-        _ArrowHead = VinTrouble.GetArrowHeadFromUser();
-        _Fletching = VinTrouble.GetFletchingFromUser();
-        _ShaftLength = VinTrouble.GetShaftLength();
+        _ArrowHead = arrowHead;
+        _Fletching = fletching;
+        _ShaftLength = shaftLength;
     }
 
     public float GetCost()
@@ -103,4 +113,10 @@ public class Arrow
 
         return cost;
     }
+
+
+    public static Arrow CreateEliteArrow() => new Arrow(ArrowHead.Steel, Fletching.Plastic, 95f);
+    public static Arrow CreateBeginnerArrow() => new Arrow(ArrowHead.Wood, Fletching.GooseFeathers, 75f);
+    public static Arrow CreateMarksmanArrow() => new Arrow(ArrowHead.Steel, Fletching.GooseFeathers, 65f);
+
 }

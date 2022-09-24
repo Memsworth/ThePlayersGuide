@@ -6,15 +6,10 @@ public static class PropertiesArrows
     {
         var myArrow = new Arrow();
         Console.WriteLine($"The arrow costs {myArrow.GetCost():N} gold");
-
-        Console.WriteLine($"{myArrow.GetFletching()}");
-        Console.WriteLine($"{myArrow.GetArrowHead()}");
-        Console.WriteLine($"{myArrow.GetShaftLength()}");
     }
 
 
     public static float GetShaftLength() => AskForNumberInRange("Enter arrow length between 60 to 100cm", 59, 101);
-    
     public static ArrowHead GetArrowHeadFromUser()
     {
         Console.WriteLine("Steel, Wood, Obsidian");
