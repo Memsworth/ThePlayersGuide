@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            RockPaperScissors.RunProgram();
+            TicTacToeGame game = new TicTacToeGame();
+            game.Run();
         }
     }
 }
