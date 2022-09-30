@@ -8,7 +8,34 @@ public class TicTacToeGame
     {
         TicTacToeBoard gameBoard = new TicTacToeBoard();
         TicTacToeGameRender gameRender = new TicTacToeGameRender();
+        TicTacToeWinCondition condition = new TicTacToeWinCondition();
+        var playerOne = new TicTacToePlayer(GetPlayerInfo(), TicTacToeCell.X);
+        var playerTwo = new TicTacToePlayer(GetPlayerInfo(), TicTacToeCell.O);
+        int round = 0;
+
+        while (round < 9)
+        {
+            gameRender.RenderGame(gameBoard);
+            gameBoard.Set(playerOne.GetLocation(),playerOne.PlayerSymbol);
+            if (condition.WinCondition(gameBoard, playerOne))
+            {
+                Console.WriteLine($"{playerOne.PlayerName} with his symbol {playerOne.PlayerSymbol} WON!");
+                return;;
+            }
+            
+            gameRender.RenderGame(gameBoard);
+            gameBoard.Set(playerTwo.GetLocation(),playerTwo.PlayerSymbol);
+            if (condition.WinCondition(gameBoard, playerTwo))
+            {
+                Console.WriteLine($"{playerTwo.PlayerName} with his symbol {playerTwo.PlayerSymbol} WON!");
+                return;
+            }
+
+            round++;
+        }
+
         gameRender.RenderGame(gameBoard);
+        Console.WriteLine("Draw");
     }
 
     private static string GetPlayerInfo()
@@ -20,6 +47,33 @@ public class TicTacToeGame
 }
 
 
+public class TicTacToeWinCondition
+{
+    public bool WinCondition(TicTacToeBoard board, TicTacToePlayer player)
+    {
+        if (board.GameBoard[0, 0] == player.PlayerSymbol && board.GameBoard[0, 1] == player.PlayerSymbol &&
+            board.GameBoard[0, 2] == player.PlayerSymbol) return true;
+        if (board.GameBoard[1, 0] == player.PlayerSymbol && board.GameBoard[1, 1] == player.PlayerSymbol &&
+            board.GameBoard[1, 2] == player.PlayerSymbol) return true;
+        if (board.GameBoard[2, 0] == player.PlayerSymbol && board.GameBoard[2, 1] == player.PlayerSymbol &&
+            board.GameBoard[2, 2] == player.PlayerSymbol) return true;
+
+        
+        if (board.GameBoard[0, 0] == player.PlayerSymbol && board.GameBoard[1, 0] == player.PlayerSymbol &&
+            board.GameBoard[2, 0] == player.PlayerSymbol) return true;
+        if (board.GameBoard[0, 1] == player.PlayerSymbol && board.GameBoard[1, 1] == player.PlayerSymbol &&
+            board.GameBoard[2, 1] == player.PlayerSymbol) return true;
+        if (board.GameBoard[0, 2] == player.PlayerSymbol && board.GameBoard[1, 2] == player.PlayerSymbol &&
+            board.GameBoard[2, 2] == player.PlayerSymbol) return true;
+
+        if (board.GameBoard[0, 0] == player.PlayerSymbol && board.GameBoard[1, 1] == player.PlayerSymbol &&
+            board.GameBoard[2, 2] == player.PlayerSymbol) return true;
+        if (board.GameBoard[0, 2] == player.PlayerSymbol && board.GameBoard[1, 1] == player.PlayerSymbol &&
+            board.GameBoard[2, 0] == player.PlayerSymbol) return true;
+
+        return false;
+    }
+}
 
 public class TicTacToePlayer
 {
@@ -43,6 +97,15 @@ public class TicTacToePlayer
         return Console.ReadLine() switch
         {
             "1" => new BoardLocation(0,0),
+            "2" => new BoardLocation(0,1),
+            "3" => new BoardLocation(0,2),
+            "4" => new BoardLocation(1,0),
+            "5" => new BoardLocation(1,1),
+            "6" => new BoardLocation(1,2),
+            "7" => new BoardLocation(2,0),
+            "8" => new BoardLocation(2,1),
+            "9" => new BoardLocation(2,2),
+            _ => throw new ArgumentException()
         };
     }
     public TicTacToePlayer(string playerName, TicTacToeCell playerSymbol)
