@@ -19,6 +19,7 @@ public class TicTacToeGame
             gameBoard.Set(playerOne.GetLocation(),playerOne.PlayerSymbol);
             if (condition.WinCondition(gameBoard, playerOne))
             {
+                gameRender.RenderGame(gameBoard);
                 Console.WriteLine($"{playerOne.PlayerName} with his symbol {playerOne.PlayerSymbol} WON!");
                 return;;
             }
@@ -26,7 +27,8 @@ public class TicTacToeGame
             gameRender.RenderGame(gameBoard);
             gameBoard.Set(playerTwo.GetLocation(),playerTwo.PlayerSymbol);
             if (condition.WinCondition(gameBoard, playerTwo))
-            {
+            { 
+                gameRender.RenderGame(gameBoard);
                 Console.WriteLine($"{playerTwo.PlayerName} with his symbol {playerTwo.PlayerSymbol} WON!");
                 return;
             }

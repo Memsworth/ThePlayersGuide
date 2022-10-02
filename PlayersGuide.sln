@@ -35,6 +35,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Statics", "Statics\Statics.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FivePrototypes", "FivePrototypes\FivePrototypes.csproj", "{E2EB5B37-4791-4F1F-ABF3-E33807BFAAAC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inheritance", "Inheritance\Inheritance.csproj", "{200015B7-85EA-4EF2-A174-CA984976B07D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polymorphism", "Polymorphism\Polymorphism.csproj", "{E12D08E6-7168-480B-9F76-75F5566BA275}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +109,14 @@ Global
 		{E2EB5B37-4791-4F1F-ABF3-E33807BFAAAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2EB5B37-4791-4F1F-ABF3-E33807BFAAAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2EB5B37-4791-4F1F-ABF3-E33807BFAAAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{200015B7-85EA-4EF2-A174-CA984976B07D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{200015B7-85EA-4EF2-A174-CA984976B07D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{200015B7-85EA-4EF2-A174-CA984976B07D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{200015B7-85EA-4EF2-A174-CA984976B07D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E12D08E6-7168-480B-9F76-75F5566BA275}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E12D08E6-7168-480B-9F76-75F5566BA275}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E12D08E6-7168-480B-9F76-75F5566BA275}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E12D08E6-7168-480B-9F76-75F5566BA275}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
